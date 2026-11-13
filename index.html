@@ -4,61 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#071b35">
-    <meta name="description" content="Corporation Services World. Soluciones integrales para impulsar tu vida y tus negocios globalmente.">
-    <title>CSW | Corporation Services World</title>
+    <meta name="description" content="Corporation Services World. Holding empresarial con soluciones integrales en turismo, negocios, salud, servicios legales, comercio y educación.">
+    <meta name="theme-color" content="#08172b">
 
+    <title>Corporation Services World | Soluciones Globales</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
     <!-- PRELOADER -->
     <div class="preloader" id="preloader">
-        <img src="logo.png" alt="CSW Logo">
-        <div class="loader"></div>
+        <img src="logo.png" alt="Corporation Services World">
+        <div class="loader-line"></div>
+        <p>WORLDWIDE EXCELLENCE</p>
     </div>
 
     <!-- HEADER -->
     <header class="header" id="header">
-
         <div class="container nav-container">
 
             <a href="#inicio" class="brand">
-                <img src="logo.png" alt="Corporation Services World">
+                <img src="logo.png" alt="Logo Corporation Services World">
                 <div class="brand-text">
                     <span>CORPORATION</span>
                     <small>SERVICES WORLD</small>
                 </div>
             </a>
 
-            <nav class="navbar" id="navbar">
+            <button class="menu-toggle" id="menuToggle"
+                aria-label="Abrir menú" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="navigation" id="navigation">
                 <a href="#inicio" class="nav-link active">Inicio</a>
                 <a href="#nosotros" class="nav-link">Nosotros</a>
-                <a href="#divisiones" class="nav-link">Divisiones</a>
+                <a href="#servicios" class="nav-link">Divisiones</a>
                 <a href="#experiencia" class="nav-link">Experiencia</a>
                 <a href="#contacto" class="nav-link">Contacto</a>
-
-                <a href="#contacto" class="nav-cta mobile-cta">
+                <a href="#contacto" class="nav-cta">
                     Hablemos <i class="fas fa-arrow-right"></i>
                 </a>
             </nav>
-
-            <a href="#contacto" class="nav-cta desktop-cta">
-                Contáctanos <i class="fas fa-arrow-right"></i>
-            </a>
-
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
 
         </div>
     </header>
@@ -71,141 +68,138 @@
             <div class="hero-background"></div>
             <div class="hero-overlay"></div>
 
-            <div class="hero-decoration decoration-one"></div>
-            <div class="hero-decoration decoration-two"></div>
-
             <div class="container hero-content">
 
                 <div class="hero-label reveal">
-                    <span class="gold-line"></span>
-                    UN MUNDO DE POSIBILIDADES
+                    <span></span>
+                    UN MUNDO DE OPORTUNIDADES
                 </div>
 
                 <h1 class="reveal">
-                    Conectamos ideas.<br>
-                    <span>Creamos soluciones.</span>
+                    Conectamos ideas,<br>
+                    <span>creamos soluciones.</span>
                 </h1>
 
                 <p class="hero-description reveal">
-                    Soluciones integrales para impulsar tu vida y tus negocios globalmente.
-                    Descubre un mundo de oportunidades con el respaldo de un holding empresarial
-                    que conecta diferentes sectores en un solo lugar.
+                    Soluciones integrales para impulsar tu vida y tus
+                    negocios globalmente. Descubre un mundo de posibilidades
+                    junto a Corporation Services World.
                 </p>
 
                 <div class="hero-buttons reveal">
-
-                    <a href="#divisiones" class="btn btn-gold">
-                        Descubre nuestros servicios
+                    <a href="#servicios" class="btn btn-gold">
+                        Descubre nuestras divisiones
                         <i class="fas fa-arrow-right"></i>
                     </a>
 
                     <a href="#nosotros" class="btn btn-outline">
                         Conoce CSW
-                        <i class="fas fa-play-circle"></i>
                     </a>
-
                 </div>
 
                 <div class="hero-bottom reveal">
-
-                    <div class="hero-scroll">
-                        <span class="scroll-line"></span>
-                        <span>DESCUBRE MÁS</span>
+                    <div class="hero-mini-stat">
+                        <strong>08</strong>
+                        <span>Divisiones empresariales</span>
                     </div>
 
-                    <div class="hero-social">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <div class="hero-mini-stat">
+                        <strong>01</strong>
+                        <span>Visión global</span>
                     </div>
 
+                    <div class="hero-mini-stat">
+                        <strong>∞</strong>
+                        <span>Posibilidades</span>
+                    </div>
                 </div>
 
             </div>
 
-            <div class="hero-number">01 / 08</div>
+            <a href="#nosotros" class="scroll-indicator">
+                <span>DESCUBRE MÁS</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
 
         </section>
 
         <!-- NOSOTROS -->
         <section class="about section-padding" id="nosotros">
 
-            <div class="container">
+            <div class="container about-grid">
 
-                <div class="about-grid">
+                <div class="about-visual reveal">
 
-                    <div class="about-visual reveal">
+                    <div class="about-image-main">
+                        <img
+                            src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1000&q=85"
+                            alt="Arquitectura moderna y empresarial">
+                    </div>
 
-                        <div class="about-image">
-                            <img
-                                src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=85"
-                                alt="Paisaje natural y océano"
-                            >
+                    <div class="about-image-small">
+                        <img
+                            src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=700&q=85"
+                            alt="Mar y naturaleza">
+                    </div>
+
+                    <div class="about-logo-card">
+                        <img src="logo.png" alt="CSW">
+                        <span>EXCELLENCE WITHOUT BORDERS</span>
+                    </div>
+
+                </div>
+
+                <div class="about-content reveal">
+
+                    <span class="section-kicker">SOBRE NOSOTROS</span>
+
+                    <h2>
+                        Un holding empresarial,
+                        <span>infinitas posibilidades.</span>
+                    </h2>
+
+                    <p>
+                        En Corporation Services World integramos diferentes
+                        sectores de servicios bajo una misma visión:
+                        conectar oportunidades, facilitar soluciones y
+                        crear experiencias de valor.
+                    </p>
+
+                    <p>
+                        Nuestra estructura empresarial reúne distintas
+                        divisiones especializadas para acompañar a personas,
+                        familias y empresas en sus necesidades personales
+                        y comerciales.
+                    </p>
+
+                    <div class="about-features">
+
+                        <div>
+                            <i class="fas fa-globe-americas"></i>
+                            <span>Proyección global</span>
                         </div>
 
-                        <div class="about-floating">
-                            <span class="floating-icon">
-                                <i class="fas fa-globe-americas"></i>
-                            </span>
-                            <div>
-                                <strong>Un solo holding</strong>
-                                <small>Múltiples oportunidades</small>
-                            </div>
+                        <div>
+                            <i class="fas fa-gem"></i>
+                            <span>Calidad y excelencia</span>
                         </div>
 
-                        <div class="about-decoration"></div>
+                        <div>
+                            <i class="fas fa-handshake"></i>
+                            <span>Soluciones integrales</span>
+                        </div>
+
+                        <div>
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Visión innovadora</span>
+                        </div>
 
                     </div>
 
-                    <div class="about-content reveal">
-
-                        <div class="section-tag">
-                            <span></span> SOBRE NOSOTROS
-                        </div>
-
-                        <h2>
-                            Más que servicios,<br>
-                            <span>construimos oportunidades.</span>
-                        </h2>
-
-                        <p>
-                            En Corporation Services World creemos que las grandes oportunidades
-                            nacen de las conexiones correctas.
-                        </p>
-
-                        <p>
-                            Somos un holding empresarial que integra diferentes sectores
-                            estratégicos para ofrecer soluciones completas, accesibles y
-                            de calidad. Conectamos personas, empresas y oportunidades
-                            a través de una red de servicios diseñada para acompañarte
-                            en cada etapa de tu crecimiento.
-                        </p>
-
-                        <div class="about-values">
-
-                            <div class="value-item">
-                                <i class="fas fa-gem"></i>
-                                <span>Excelencia</span>
-                            </div>
-
-                            <div class="value-item">
-                                <i class="fas fa-handshake"></i>
-                                <span>Confianza</span>
-                            </div>
-
-                            <div class="value-item">
-                                <i class="fas fa-earth-americas"></i>
-                                <span>Proyección global</span>
-                            </div>
-
-                        </div>
-
-                        <a href="#divisiones" class="text-link">
-                            Explorar nuestras divisiones
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-
-                    </div>
+                    <a href="#contacto" class="text-link">
+                        Conoce lo que podemos hacer por ti
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
 
                 </div>
 
@@ -213,16 +207,13 @@
 
         </section>
 
-        <!-- DIVISIONES -->
-        <section class="divisions section-padding" id="divisiones">
+        <!-- SERVICIOS -->
+        <section class="services section-padding" id="servicios">
 
             <div class="container">
 
                 <div class="section-heading reveal">
-
-                    <div class="section-tag">
-                        <span></span> NUESTRO UNIVERSO
-                    </div>
+                    <span class="section-kicker">NUESTRO UNIVERSO</span>
 
                     <h2>
                         Ocho divisiones.<br>
@@ -230,40 +221,48 @@
                     </h2>
 
                     <p>
-                        Integramos servicios especializados en diferentes sectores,
-                        creando conexiones que simplifican tu vida y potencian tus proyectos.
+                        Explora nuestras áreas de especialización y encuentra
+                        el servicio que necesitas.
                     </p>
-
                 </div>
 
-                <!-- FILTROS -->
-                <div class="filter-panel reveal">
+                <!-- BUSCADOR -->
+                <div class="service-search reveal">
 
-                    <div class="filter-title">
-                        <i class="fas fa-sliders"></i>
-                        Explora nuestros servicios
+                    <div class="search-title">
+                        <i class="fas fa-search"></i>
+                        <span>Encuentra tu solución</span>
                     </div>
 
-                    <div class="filter-buttons">
+                    <div class="search-input-wrap">
+                        <input
+                            type="text"
+                            id="serviceSearch"
+                            placeholder="¿Qué servicio estás buscando?"
+                            aria-label="Buscar servicios">
+                        <i class="fas fa-search"></i>
+                    </div>
+
+                    <div class="filter-buttons" id="filterButtons">
 
                         <button class="filter-btn active" data-filter="all">
                             Todos
                         </button>
 
                         <button class="filter-btn" data-filter="viajes">
-                            <i class="fas fa-plane"></i> Viajes
+                            Viajes
                         </button>
 
                         <button class="filter-btn" data-filter="negocios">
-                            <i class="fas fa-briefcase"></i> Negocios
+                            Negocios
                         </button>
 
                         <button class="filter-btn" data-filter="salud">
-                            <i class="fas fa-heart"></i> Salud y Belleza
+                            Salud y Belleza
                         </button>
 
                         <button class="filter-btn" data-filter="legal">
-                            <i class="fas fa-scale-balanced"></i> Legal
+                            Legal
                         </button>
 
                     </div>
@@ -273,138 +272,234 @@
                 <!-- TARJETAS -->
                 <div class="services-grid" id="servicesGrid">
 
-                    <article class="service-card reveal" data-category="viajes">
+                    <article class="service-card reveal" data-category="viajes" data-search="hoteles hospitalidad alojamiento confort hospedaje">
 
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=85" alt="Hotel de lujo">
-                            <span class="card-number">01</span>
-                            <span class="card-icon"><i class="fas fa-hotel"></i></span>
+                        <div class="service-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=85"
+                                alt="Hotel de lujo">
+
+                            <span class="service-number">01</span>
                         </div>
 
-                        <div class="card-content">
-                            <span class="card-category">HOSPITALIDAD</span>
+                        <div class="service-info">
+                            <div class="service-icon">
+                                <i class="fas fa-hotel"></i>
+                            </div>
+
                             <h3>Hoteles</h3>
-                            <p>Hospitalidad y confort premium para experiencias inolvidables.</p>
-                            <a href="#contacto" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+
+                            <p>
+                                Hospitalidad, alojamiento y confort premium
+                                para disfrutar experiencias extraordinarias.
+                            </p>
+
+                            <a href="#contacto" class="service-link" data-service="Hoteles">
+                                Explorar servicio <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
 
                     </article>
 
-                    <article class="service-card reveal" data-category="viajes">
+                    <article class="service-card reveal" data-category="viajes" data-search="viajes turismo tours experiencias vacaciones destinos internacionales">
 
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=85" alt="Paisaje de viaje">
-                            <span class="card-number">02</span>
-                            <span class="card-icon"><i class="fas fa-plane-departure"></i></span>
+                        <div class="service-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=800&q=85"
+                                alt="Destino turístico">
+
+                            <span class="service-number">02</span>
                         </div>
 
-                        <div class="card-content">
-                            <span class="card-category">EXPERIENCIAS</span>
+                        <div class="service-info">
+                            <div class="service-icon">
+                                <i class="fas fa-plane"></i>
+                            </div>
+
                             <h3>Viajes</h3>
-                            <p>Tours, destinos exclusivos y experiencias alrededor del mundo.</p>
-                            <a href="#contacto" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+
+                            <p>
+                                Tours, destinos y experiencias globales
+                                diseñadas para descubrir el mundo.
+                            </p>
+
+                            <a href="#contacto" class="service-link" data-service="Viajes">
+                                Explorar servicio <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
 
                     </article>
 
-                    <article class="service-card reveal" data-category="viajes">
+                    <article class="service-card reveal" data-category="viajes negocios" data-search="visas migración visados pasaportes asesoría documentación">
 
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=85" alt="Pasaporte y viaje">
-                            <span class="card-number">03</span>
-                            <span class="card-icon"><i class="fas fa-passport"></i></span>
+                        <div class="service-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=85"
+                                alt="Avión en viaje internacional">
+
+                            <span class="service-number">03</span>
                         </div>
 
-                        <div class="card-content">
-                            <span class="card-category">MOVILIDAD INTERNACIONAL</span>
+                        <div class="service-info">
+                            <div class="service-icon">
+                                <i class="fas fa-passport"></i>
+                            </div>
+
                             <h3>Visas</h3>
-                            <p>Gestión migratoria y asesoría para tus trámites de visado.</p>
-                            <a href="#contacto" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+
+                            <p>
+                                Gestión migratoria y asesoría para procesos
+                                de visados y viajes internacionales.
+                            </p>
+
+                            <a href="#contacto" class="service-link" data-service="Visas">
+                                Explorar servicio <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
 
                     </article>
 
-                    <article class="service-card reveal" data-category="legal">
+                    <article class="service-card reveal" data-category="legal negocios" data-search="defensa legal abogados jurídico asesoría representación contratos">
 
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=85" alt="Asesoría legal">
-                            <span class="card-number">04</span>
-                            <span class="card-icon"><i class="fas fa-scale-balanced"></i></span>
+                        <div class="service-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=85"
+                                alt="Servicios jurídicos">
+
+                            <span class="service-number">04</span>
                         </div>
 
-                        <div class="card-content">
-                            <span class="card-category">ASESORÍA JURÍDICA</span>
+                        <div class="service-info">
+                            <div class="service-icon">
+                                <i class="fas fa-scale-balanced"></i>
+                            </div>
+
                             <h3>Defensa Legal</h3>
-                            <p>Asesoría y representación jurídica para proteger tus intereses.</p>
-                            <a href="#contacto" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+
+                            <p>
+                                Asesoría y representación jurídica para
+                                personas y organizaciones.
+                            </p>
+
+                            <a href="#contacto" class="service-link" data-service="Defensa Legal">
+                                Explorar servicio <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
 
                     </article>
 
-                    <article class="service-card reveal" data-category="salud">
+                    <article class="service-card reveal" data-category="salud" data-search="salud bienestar medicina médicos servicios médicos atención">
 
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=85" alt="Servicios de salud">
-                            <span class="card-number">05</span>
-                            <span class="card-icon"><i class="fas fa-heart-pulse"></i></span>
+                        <div class="service-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=85"
+                                alt="Servicios médicos">
+
+                            <span class="service-number">05</span>
                         </div>
 
-                        <div class="card-content">
-                            <span class="card-category">BIENESTAR</span>
+                        <div class="service-info">
+                            <div class="service-icon">
+                                <i class="fas fa-heart-pulse"></i>
+                            </div>
+
                             <h3>Salud</h3>
-                            <p>Bienestar, atención y servicios médicos orientados a tu calidad de vida.</p>
-                            <a href="#contacto" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+
+                            <p>
+                                Bienestar, orientación y acceso a servicios
+                                médicos para cuidar lo más importante.
+                            </p>
+
+                            <a href="#contacto" class="service-link" data-service="Salud">
+                                Explorar servicio <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
 
                     </article>
 
-                    <article class="service-card reveal" data-category="negocios">
+                    <article class="service-card reveal" data-category="negocios" data-search="importaciones exportaciones logística comercio internacional mercancías">
 
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=800&q=85" alt="Comercio internacional">
-                            <span class="card-number">06</span>
-                            <span class="card-icon"><i class="fas fa-boxes-stacked"></i></span>
+                        <div class="service-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=800&q=85"
+                                alt="Comercio y logística internacional">
+
+                            <span class="service-number">06</span>
                         </div>
 
-                        <div class="card-content">
-                            <span class="card-category">COMERCIO GLOBAL</span>
+                        <div class="service-info">
+                            <div class="service-icon">
+                                <i class="fas fa-boxes-stacked"></i>
+                            </div>
+
                             <h3>Importaciones y Exportaciones</h3>
-                            <p>Soluciones de logística y comercio para conectar mercados internacionales.</p>
-                            <a href="#contacto" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+
+                            <p>
+                                Logística y comercio internacional para
+                                conectar mercados y oportunidades.
+                            </p>
+
+                            <a href="#contacto" class="service-link" data-service="Importaciones y Exportaciones">
+                                Explorar servicio <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
 
                     </article>
 
-                    <article class="service-card reveal" data-category="negocios">
+                    <article class="service-card reveal" data-category="negocios" data-search="cursos lenguas idiomas inglés francés formación educación aprendizaje">
 
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=85" alt="Educación y formación">
-                            <span class="card-number">07</span>
-                            <span class="card-icon"><i class="fas fa-language"></i></span>
+                        <div class="service-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=85"
+                                alt="Educación y formación">
+
+                            <span class="service-number">07</span>
                         </div>
 
-                        <div class="card-content">
-                            <span class="card-category">EDUCACIÓN</span>
+                        <div class="service-info">
+                            <div class="service-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+
                             <h3>Cursos de Lenguas</h3>
-                            <p>Aprende nuevos idiomas y amplía tus oportunidades personales y profesionales.</p>
-                            <a href="#contacto" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+
+                            <p>
+                                Formación en idiomas para ampliar horizontes
+                                personales, académicos y profesionales.
+                            </p>
+
+                            <a href="#contacto" class="service-link" data-service="Cursos de Lenguas">
+                                Explorar servicio <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
 
                     </article>
 
-                    <article class="service-card reveal" data-category="salud">
+                    <article class="service-card reveal" data-category="salud" data-search="estética belleza cuidado personal tratamientos imagen bienestar">
 
-                        <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=800&q=85" alt="Estética y cuidado personal">
-                            <span class="card-number">08</span>
-                            <span class="card-icon"><i class="fas fa-spa"></i></span>
+                        <div class="service-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=800&q=85"
+                                alt="Estética y cuidado personal">
+
+                            <span class="service-number">08</span>
                         </div>
 
-                        <div class="card-content">
-                            <span class="card-category">BELLEZA Y CUIDADO</span>
+                        <div class="service-info">
+                            <div class="service-icon">
+                                <i class="fas fa-spa"></i>
+                            </div>
+
                             <h3>Estética</h3>
-                            <p>Cuidado personal y tratamientos estéticos para resaltar tu bienestar.</p>
-                            <a href="#contacto" class="card-link">Conocer más <i class="fas fa-arrow-right"></i></a>
+
+                            <p>
+                                Cuidado personal, belleza y servicios de
+                                estética para realzar tu bienestar.
+                            </p>
+
+                            <a href="#contacto" class="service-link" data-service="Estética">
+                                Explorar servicio <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
 
                     </article>
@@ -412,7 +507,9 @@
                 </div>
 
                 <div class="no-results" id="noResults">
-                    No encontramos servicios en esta categoría.
+                    <i class="fas fa-search"></i>
+                    <h3>No encontramos resultados</h3>
+                    <p>Prueba con otra palabra o categoría.</p>
                 </div>
 
             </div>
@@ -420,30 +517,26 @@
         </section>
 
         <!-- BANNER GALÁPAGOS -->
-        <section class="destination">
+        <section class="destination-banner">
 
-            <div class="destination-image"></div>
             <div class="destination-overlay"></div>
 
             <div class="container destination-content reveal">
 
-                <span class="destination-label">
-                    <i class="fas fa-earth-americas"></i>
-                    EL MUNDO ES TUYO
-                </span>
+                <span class="section-kicker">UN MUNDO POR DESCUBRIR</span>
 
                 <h2>
-                    Hay un mundo<br>
-                    <span>esperando por ti.</span>
+                    El mundo está lleno de oportunidades.
+                    <span>Vamos a descubrirlas.</span>
                 </h2>
 
                 <p>
-                    Desde los paisajes extraordinarios de Galápagos hasta los destinos
-                    más fascinantes del planeta. Con CSW, cada oportunidad está más cerca.
+                    Desde experiencias extraordinarias hasta soluciones
+                    empresariales, conectamos posibilidades sin fronteras.
                 </p>
 
                 <a href="#contacto" class="btn btn-gold">
-                    Comienza tu experiencia
+                    Conecta con nosotros
                     <i class="fas fa-arrow-right"></i>
                 </a>
 
@@ -452,58 +545,76 @@
         </section>
 
         <!-- ESTADÍSTICAS -->
-        <section class="stats section-padding" id="experiencia">
+        <section class="statistics section-padding" id="experiencia">
 
             <div class="container">
 
                 <div class="section-heading reveal">
-
-                    <div class="section-tag">
-                        <span></span> NUESTRO COMPROMISO
-                    </div>
+                    <span class="section-kicker">NUESTRA VISIÓN</span>
 
                     <h2>
-                        Conectando oportunidades.<br>
-                        <span>Creando futuro.</span>
+                        Una visión que
+                        <span>trasciende fronteras.</span>
                     </h2>
 
                     <p>
-                        Nuestra visión es integrar soluciones que generen valor
-                        y nuevas posibilidades para personas y empresas.
+                        Una estructura empresarial orientada a crear
+                        oportunidades y conectar diferentes sectores.
                     </p>
-
                 </div>
 
-                <div class="stats-grid">
+                <div class="stats-grid reveal">
 
-                    <div class="stat-item reveal">
-                        <div class="stat-icon"><i class="fas fa-building"></i></div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
                         <h3><span class="counter" data-target="8">0</span></h3>
                         <p>Divisiones empresariales</p>
                     </div>
 
-                    <div class="stat-item reveal">
-                        <div class="stat-icon"><i class="fas fa-globe"></i></div>
-                        <h3><span class="counter" data-target="1">0</span></h3>
-                        <p>Visión global</p>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-earth-americas"></i>
+                        </div>
+                        <h3><span class="counter" data-target="5">0</span><span class="plus">+</span></h3>
+                        <p>Áreas de especialización</p>
                     </div>
 
-                    <div class="stat-item reveal">
-                        <div class="stat-icon"><i class="fas fa-handshake"></i></div>
-                        <h3><span class="counter" data-target="100">0</span><span>%</span></h3>
-                        <p>Compromiso con la calidad</p>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3><span class="counter" data-target="1">0</span></h3>
+                        <p>Visión empresarial integral</p>
                     </div>
 
-                    <div class="stat-item reveal">
-                        <div class="stat-icon"><i class="fas fa-lightbulb"></i></div>
-                        <h3><span class="counter" data-target="1">0</span></h3>
-                        <p>Un solo mundo de soluciones</p>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <h3>∞</h3>
+                        <p>Oportunidades por descubrir</p>
                     </div>
 
                 </div>
 
             </div>
 
+        </section>
+
+        <!-- FRASE -->
+        <section class="quote-section">
+            <div class="container quote-content reveal">
+                <i class="fas fa-quote-left"></i>
+
+                <h2>
+                    Las grandes oportunidades nacen cuando
+                    conectamos diferentes mundos.
+                </h2>
+
+                <span>CORPORATION SERVICES WORLD</span>
+            </div>
         </section>
 
         <!-- CONTACTO -->
@@ -511,124 +622,180 @@
 
             <div class="container">
 
+                <div class="section-heading reveal">
+                    <span class="section-kicker">ESTAMOS PARA AYUDARTE</span>
+
+                    <h2>
+                        Comencemos algo
+                        <span>extraordinario.</span>
+                    </h2>
+
+                    <p>
+                        Cuéntanos qué necesitas. Nuestro equipo estará
+                        encantado de recibir tu consulta.
+                    </p>
+                </div>
+
                 <div class="contact-grid">
 
+                    <!-- INFORMACIÓN -->
                     <div class="contact-info reveal">
 
-                        <div class="section-tag">
-                            <span></span> HABLEMOS
-                        </div>
-
-                        <h2>
-                            Tu próxima gran<br>
-                            <span>oportunidad comienza aquí.</span>
-                        </h2>
+                        <h3>Conectemos.</h3>
 
                         <p>
-                            Cuéntanos qué necesitas. Nuestro equipo está listo
-                            para ayudarte a encontrar la solución adecuada.
+                            Estamos listos para ayudarte a encontrar
+                            la solución adecuada.
                         </p>
 
                         <div class="contact-detail">
-                            <div class="detail-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="detail-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
                             <div>
-                                <small>Correo electrónico</small>
-                                <strong>Contáctanos por nuestro formulario</strong>
+                                <small>Correo empresarial</small>
+                                <a href="mailto:corporationservicesworld@gmail.com">
+                                    corporationservicesworld@gmail.com
+                                </a>
                             </div>
                         </div>
 
                         <div class="contact-detail">
-                            <div class="detail-icon"><i class="fas fa-globe"></i></div>
+                            <div class="detail-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <small>Teléfono / WhatsApp</small>
+                                <a href="https://wa.me/593992422941" target="_blank" rel="noopener noreferrer">
+                                    0992422941
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="detail-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
                             <div>
                                 <small>Alcance</small>
-                                <strong>Soluciones con visión global</strong>
+                                <strong>Soluciones globales</strong>
                             </div>
                         </div>
 
                         <div class="contact-socials">
-                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <span>SÍGUENOS</span>
+
+                            <!-- Reemplaza # por las URLs reales de tus redes -->
+                            <div class="social-icons">
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://wa.me/593992422941" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
                         </div>
 
                     </div>
 
-                    <div class="contact-form-container reveal">
+                    <!-- FORMULARIO REAL -->
+                    <div class="contact-form-wrapper reveal">
 
-                        <form id="contactForm">
+                        <form
+                            id="contactForm"
+                            action="https://formsubmit.co/corporationservicesworld@gmail.com"
+                            method="POST"
+                        >
 
-                            <h3>Cuéntanos sobre tu proyecto</h3>
+                            <input type="hidden" name="_subject" value="Nueva consulta - Corporation Services World">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="true">
 
-                            <p>Completa tus datos y nos pondremos en contacto contigo.</p>
+                            <!-- Campo anti-spam -->
+                            <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+
+                            <div class="form-heading">
+                                <h3>Envíanos un mensaje</h3>
+                                <p>Completa los siguientes campos.</p>
+                            </div>
 
                             <div class="form-row">
 
                                 <div class="form-group">
-                                    <label for="name">Nombre completo</label>
-                                    <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                                    <label for="name">Nombre completo *</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Tu nombre"
+                                        autocomplete="name"
+                                        required
+                                        minlength="2"
+                                    >
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="email">Correo electrónico</label>
-                                    <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                                    <label for="email">Correo electrónico *</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="ejemplo@correo.com"
+                                        autocomplete="email"
+                                        required
+                                    >
                                 </div>
 
                             </div>
 
                             <div class="form-group">
-                                <label for="service">Servicio de interés</label>
+                                <label for="service">Servicio de interés *</label>
 
                                 <select id="service" name="service" required>
-                                    <option value="">Selecciona una división</option>
-                                    <option>Hoteles</option>
-                                    <option>Viajes</option>
-                                    <option>Visas</option>
-                                    <option>Defensa Legal</option>
-                                    <option>Salud</option>
-                                    <option>Importaciones y Exportaciones</option>
-                                    <option>Cursos de Lenguas</option>
-                                    <option>Estética</option>
-                                    <option>Información general</option>
+                                    <option value="" disabled selected>
+                                        Selecciona una división
+                                    </option>
+                                    <option value="Hoteles">Hoteles</option>
+                                    <option value="Viajes">Viajes</option>
+                                    <option value="Visas">Visas</option>
+                                    <option value="Defensa Legal">Defensa Legal</option>
+                                    <option value="Salud">Salud</option>
+                                    <option value="Importaciones y Exportaciones">Importaciones y Exportaciones</option>
+                                    <option value="Cursos de Lenguas">Cursos de Lenguas</option>
+                                    <option value="Estética">Estética</option>
+                                    <option value="Información general">Información general</option>
                                 </select>
-
                             </div>
 
                             <div class="form-group">
-                                <label for="message">Mensaje</label>
-                                <textarea id="message" name="message" rows="5" placeholder="Cuéntanos cómo podemos ayudarte..." required></textarea>
+                                <label for="message">Tu mensaje *</label>
+
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="5"
+                                    placeholder="Cuéntanos cómo podemos ayudarte..."
+                                    required
+                                    minlength="10"
+                                ></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-gold form-submit">
+                            <div class="privacy-note">
+                                <i class="fas fa-lock"></i>
+                                Tus datos serán utilizados para responder
+                                a tu consulta.
+                            </div>
+
+                            <button type="submit" class="btn btn-gold submit-btn" id="submitBtn">
                                 Enviar mensaje
                                 <i class="fas fa-paper-plane"></i>
                             </button>
 
-                            <div class="form-status" id="formStatus" role="status"></div>
+                            <p class="form-status" id="formStatus" aria-live="polite"></p>
 
                         </form>
 
                     </div>
 
                 </div>
-
-            </div>
-
-        </section>
-
-        <!-- CTA FINAL -->
-        <section class="final-cta">
-
-            <div class="container final-cta-content reveal">
-
-                <div>
-                    <span>CSW · CORPORATION SERVICES WORLD</span>
-                    <h2>Un mundo. Infinitas posibilidades.</h2>
-                </div>
-
-                <a href="#contacto" class="btn btn-dark">
-                    Conectemos
-                    <i class="fas fa-arrow-right"></i>
-                </a>
 
             </div>
 
@@ -646,7 +813,7 @@
                 <div class="footer-brand">
 
                     <a href="#inicio" class="brand footer-logo">
-                        <img src="logo.png" alt="CSW">
+                        <img src="logo.png" alt="Corporation Services World">
                         <div class="brand-text">
                             <span>CORPORATION</span>
                             <small>SERVICES WORLD</small>
@@ -655,13 +822,14 @@
 
                     <p>
                         Conectamos ideas, creamos soluciones.
-                        Un holding empresarial con visión global.
+                        Un mundo de oportunidades bajo una misma visión.
                     </p>
 
                     <div class="footer-socials">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/593992422941" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
 
                 </div>
@@ -670,43 +838,58 @@
                     <h4>Explora</h4>
                     <a href="#inicio">Inicio</a>
                     <a href="#nosotros">Nosotros</a>
-                    <a href="#divisiones">Divisiones</a>
-                    <a href="#experiencia">Experiencia</a>
+                    <a href="#servicios">Divisiones</a>
+                    <a href="#experiencia">Nuestra visión</a>
+                    <a href="#contacto">Contacto</a>
                 </div>
 
                 <div class="footer-column">
                     <h4>Divisiones</h4>
-                    <a href="#divisiones">Hoteles y Viajes</a>
-                    <a href="#divisiones">Visas</a>
-                    <a href="#divisiones">Defensa Legal</a>
-                    <a href="#divisiones">Salud y Estética</a>
-                    <a href="#divisiones">Negocios y Educación</a>
+                    <a href="#servicios">Hoteles</a>
+                    <a href="#servicios">Viajes</a>
+                    <a href="#servicios">Visas</a>
+                    <a href="#servicios">Defensa Legal</a>
+                    <a href="#servicios">Salud y Estética</a>
                 </div>
 
                 <div class="footer-column">
-                    <h4>Contacto</h4>
-                    <a href="#contacto">Contáctanos</a>
-                    <a href="#contacto">Solicitar información</a>
-                    <a href="#contacto">Asesoría personalizada</a>
+                    <h4>Contáctanos</h4>
+                    <a href="mailto:corporationservicesworld@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                        Correo empresarial
+                    </a>
+                    <a href="https://wa.me/593992422941" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i>
+                        0992422941
+                    </a>
                 </div>
 
             </div>
 
             <div class="footer-bottom">
+                <p>
+                    © <span id="currentYear"></span>
+                    Corporation Services World. Todos los derechos reservados.
+                </p>
 
-                <p>© <span id="year"></span> Corporation Services World. Todos los derechos reservados.</p>
-
-                <p class="footer-slogan">Conectamos ideas, creamos soluciones.</p>
-
+                <span>WORLDWIDE EXCELLENCE</span>
             </div>
 
         </div>
 
     </footer>
 
-    <button id="backToTop" class="back-to-top" aria-label="Volver arriba">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <!-- WHATSAPP FLOTANTE -->
+    <a
+        href="https://wa.me/593992422941?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20Corporation%20Services%20World."
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp"
+    >
+        <i class="fab fa-whatsapp"></i>
+        <span>¿Necesitas ayuda?</span>
+    </a>
 
     <script src="script.js"></script>
 
