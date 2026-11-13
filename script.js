@@ -1,326 +1,456 @@
 
+/* =========================================
+   CORPORATION SERVICES WORLD
+   JavaScript principal
+========================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
 
-    // PRELOADER
+    /* =====================================
+       PRELOADER
+    ===================================== */
+
     const preloader = document.getElementById("preloader");
 
-    window.addEventListener("load", () => {
-        preloader.classList.add("hide");
-    });
+    function hidePreloader() {
+        if (preloader) {
+            preloader.classList.add("hide");
+        }
+    }
 
-    // Respaldo por si alguna imagen tarda en cargar
-    setTimeout(() => {
-        preloader.classList.add("hide");
-    }, 2500);
+    window.addEventListener("load", hidePreloader);
 
-    // HEADER STICKY
+    // Evita que el preloader quede bloqueado
+    // si alguna imagen externa tarda en cargar.
+    setTimeout(hidePreloader, 2500);
+
+
+    /* =====================================
+       HEADER AL HACER SCROLL
+    ===================================== */
+
     const header = document.getElementById("header");
 
-    function handleHeader() {
-        if (window.scrollY > 50) {
+    function updateHeader() {
+        if (!header) return;
+
+        if (window.scrollY > 40) {
             header.classList.add("scrolled");
         } else {
             header.classList.remove("scrolled");
         }
     }
 
-    window.addEventListener("scroll", handleHeader);
-    handleHeader();
+    window.addEventListener("scroll", updateHeader);
+    updateHeader();
 
-    // MENU HAMBURGUESA
+
+    /* =====================================
+       MENU HAMBURGUESA
+    ===================================== */
+
     const menuToggle = document.getElementById("menuToggle");
-    const navbar = document.getElementById("navbar");
+    const navigation = document.getElementById("navigation");
     const navLinks = document.querySelectorAll(".nav-link");
 
     function closeMenu() {
-        navbar.classList.remove("open");
-        menuToggle.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
+        if (!navigation || !menuToggle) return;
+
+        navigation.classList.remove("open");
         document.body.classList.remove("menu-open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Abrir menú");
+
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
     }
 
-    menuToggle.addEventListener("click", () => {
+    if (menuToggle && navigation) {
 
-        const isOpen = navbar.classList.toggle("open");
+        menuToggle.addEventListener("click", () => {
 
-        menuToggle.classList.toggle("active", isOpen);
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
+            const isOpen = navigation.classList.toggle("open");
 
-        document.body.classList.toggle("menu-open", isOpen);
+            document.body.classList.toggle("menu-open", isOpen);
 
-    });
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
 
-    navLinks.forEach(link => {
-        link.addEventListener("click", closeMenu);
-    });
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Cerrar menú" : "Abrir menú"
+            );
 
-    document.querySelectorAll(".mobile-cta").forEach(link => {
-        link.addEventListener("click", closeMenu);
-    });
+            menuToggle.innerHTML = isOpen
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
 
-    window.addEventListener("resize", () => {
-        if (window.innerWidth > 760) {
-            closeMenu();
-        }
-    });
+        });
 
-    // FILTRO DE DIVISIONES
+        navLinks.forEach(link => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        navigation.querySelector(".nav-cta")?.addEventListener(
+            "click",
+            closeMenu
+        );
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+
+    }
+
+
+    /* =====================================
+       ANIMACIONES AL HACER SCROLL
+    ===================================== */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+
+        const revealObserver = new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -30px 0px"
+            }
+        );
+
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+
+    } else {
+
+        revealElements.forEach(element => {
+            element.classList.add("visible");
+        });
+
+    }
+
+
+    /* =====================================
+       FILTROS DE SERVICIOS
+    ===================================== */
+
     const filterButtons = document.querySelectorAll(".filter-btn");
     const serviceCards = document.querySelectorAll(".service-card");
+    const serviceSearch = document.getElementById("serviceSearch");
     const noResults = document.getElementById("noResults");
+
+    let activeFilter = "all";
+
+    function filterServices() {
+
+        const searchText = serviceSearch
+            ? serviceSearch.value.toLowerCase().trim()
+            : "";
+
+        let visibleCount = 0;
+
+        serviceCards.forEach(card => {
+
+            const categories = (
+                card.dataset.category || ""
+            ).split(" ");
+
+            const searchData = (
+                card.dataset.search || ""
+            ).toLowerCase();
+
+            const title = (
+                card.querySelector("h3")?.textContent || ""
+            ).toLowerCase();
+
+            const matchesCategory =
+                activeFilter === "all" ||
+                categories.includes(activeFilter);
+
+            const matchesSearch =
+                searchText === "" ||
+                searchData.includes(searchText) ||
+                title.includes(searchText);
+
+            const isVisible = matchesCategory && matchesSearch;
+
+            card.classList.toggle("hidden", !isVisible);
+
+            if (isVisible) {
+                visibleCount++;
+            }
+
+        });
+
+        if (noResults) {
+            noResults.classList.toggle("show", visibleCount === 0);
+        }
+
+    }
 
     filterButtons.forEach(button => {
 
         button.addEventListener("click", () => {
 
-            // Activar botón seleccionado
-            filterButtons.forEach(btn => {
-                btn.classList.remove("active");
+            filterButtons.forEach(item => {
+                item.classList.remove("active");
             });
 
             button.classList.add("active");
 
-            const filter = button.dataset.filter;
+            activeFilter = button.dataset.filter || "all";
 
-            let visibleCount = 0;
-
-            serviceCards.forEach(card => {
-
-                const category = card.dataset.category;
-
-                const shouldShow =
-                    filter === "all" || category === filter;
-
-                card.classList.toggle("hide", !shouldShow);
-
-                if (shouldShow) {
-                    visibleCount++;
-                }
-
-            });
-
-            // Mostrar mensaje si no existen resultados
-            noResults.style.display =
-                visibleCount === 0 ? "block" : "none";
+            filterServices();
 
         });
 
     });
 
-    // ANIMACIONES AL HACER SCROLL
-    const revealElements = document.querySelectorAll(".reveal");
+    if (serviceSearch) {
+        serviceSearch.addEventListener("input", filterServices);
+    }
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
 
-        entries.forEach(entry => {
+    /* =====================================
+       SELECCIÓN AUTOMÁTICA DE SERVICIO
+    ===================================== */
 
-            if (entry.isIntersecting) {
+    const serviceLinks = document.querySelectorAll(".service-link");
+    const serviceSelect = document.getElementById("service");
 
-                entry.target.classList.add("visible");
+    serviceLinks.forEach(link => {
 
-                observer.unobserve(entry.target);
+        link.addEventListener("click", () => {
+
+            const selectedService = link.dataset.service;
+
+            if (serviceSelect && selectedService) {
+
+                serviceSelect.value = selectedService;
 
             }
 
         });
 
-    }, {
-        threshold: 0.12
     });
 
-    revealElements.forEach(element => {
-        revealObserver.observe(element);
-    });
 
-    // CONTADORES ANIMADOS
+    /* =====================================
+       ESTADÍSTICAS ANIMADAS
+    ===================================== */
+
     const counters = document.querySelectorAll(".counter");
-    let countersStarted = false;
 
     function animateCounter(counter) {
 
         const target = Number(counter.dataset.target);
+
+        if (!Number.isFinite(target)) return;
+
         const duration = 1500;
         const startTime = performance.now();
 
-        function update(currentTime) {
+        function updateCounter(currentTime) {
 
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
+            const progress = Math.min(
+                (currentTime - startTime) / duration,
+                1
+            );
 
             const easedProgress = 1 - Math.pow(1 - progress, 3);
 
-            const current = Math.floor(target * easedProgress);
+            const currentNumber = Math.floor(
+                easedProgress * target
+            );
 
-            counter.textContent = current.toLocaleString("es-EC");
+            counter.textContent = currentNumber.toLocaleString("es-EC");
 
             if (progress < 1) {
-                requestAnimationFrame(update);
+                requestAnimationFrame(updateCounter);
             } else {
                 counter.textContent = target.toLocaleString("es-EC");
             }
 
         }
 
-        requestAnimationFrame(update);
+        requestAnimationFrame(updateCounter);
 
     }
 
-    const statsSection = document.querySelector(".stats");
+    if ("IntersectionObserver" in window) {
 
-    const statsObserver = new IntersectionObserver(entries => {
+        const counterObserver = new IntersectionObserver(
+            (entries, observer) => {
 
-        entries.forEach(entry => {
+                entries.forEach(entry => {
 
-            if (entry.isIntersecting && !countersStarted) {
+                    if (entry.isIntersecting) {
 
-                countersStarted = true;
+                        animateCounter(entry.target);
 
-                counters.forEach(counter => {
-                    animateCounter(counter);
+                        observer.unobserve(entry.target);
+
+                    }
+
                 });
 
-                statsObserver.disconnect();
+            },
+            { threshold: 0.6 }
+        );
 
-            }
-
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
         });
 
-    }, {
-        threshold: 0.3
-    });
+    } else {
 
-    if (statsSection) {
-        statsObserver.observe(statsSection);
+        counters.forEach(counter => {
+            counter.textContent = counter.dataset.target;
+        });
+
     }
 
-    // BOTON VOLVER ARRIBA
-    const backToTop = document.getElementById("backToTop");
 
-    window.addEventListener("scroll", () => {
+    /* =====================================
+       NAVEGACIÓN ACTIVA
+    ===================================== */
 
-        if (window.scrollY > 400) {
-            backToTop.classList.add("show");
-        } else {
-            backToTop.classList.remove("show");
-        }
+    const sections = document.querySelectorAll(
+        "main section[id]"
+    );
 
-    });
+    if ("IntersectionObserver" in window) {
 
-    backToTop.addEventListener("click", () => {
+        const sectionObserver = new IntersectionObserver(
+            entries => {
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+                entries.forEach(entry => {
 
-    });
+                    if (entry.isIntersecting) {
 
-    // ACTUALIZAR AÑO AUTOMATICAMENTE
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
+                        const currentId = entry.target.id;
 
-    // NAVEGACION ACTIVA
-    const sections = document.querySelectorAll("main section[id]");
+                        navLinks.forEach(link => {
 
-    const sectionObserver = new IntersectionObserver(entries => {
+                            const isActive =
+                                link.getAttribute("href") === "#" + currentId;
 
-        entries.forEach(entry => {
+                            link.classList.toggle("active", isActive);
 
-            if (entry.isIntersecting) {
+                        });
 
-                const currentId = entry.target.id;
-
-                navLinks.forEach(link => {
-
-                    link.classList.toggle(
-                        "active",
-                        link.getAttribute("href") === "#" + currentId
-                    );
+                    }
 
                 });
 
+            },
+            {
+                rootMargin: "-30% 0px -60% 0px"
             }
+        );
 
+        sections.forEach(section => {
+            sectionObserver.observe(section);
         });
 
-    }, {
-        rootMargin: "-30% 0px -60% 0px"
-    });
+    }
 
-    sections.forEach(section => {
-        sectionObserver.observe(section);
-    });
 
-    // FORMULARIO DE CONTACTO
+    /* =====================================
+       FORMULARIO DE CONTACTO
+       ENVÍO REAL MEDIANTE FORMSUBMIT
+    ===================================== */
+
     const contactForm = document.getElementById("contactForm");
     const formStatus = document.getElementById("formStatus");
+    const submitBtn = document.getElementById("submitBtn");
 
-    contactForm.addEventListener("submit", event => {
+    if (contactForm) {
 
-        event.preventDefault();
+        contactForm.addEventListener("submit", event => {
 
-        if (!contactForm.checkValidity()) {
-            contactForm.reportValidity();
-            return;
-        }
+            // No se utiliza preventDefault:
+            // el navegador debe enviar el formulario
+            // mediante POST directamente a FormSubmit.
 
-        const formData = new FormData(contactForm);
+            if (!contactForm.checkValidity()) {
+                return;
+            }
 
-        const name = formData.get("name").trim();
-        const email = formData.get("email").trim();
-        const service = formData.get("service");
-        const message = formData.get("message").trim();
+            if (formStatus) {
+                formStatus.textContent =
+                    "Enviando tu consulta. Por favor espera...";
+            }
 
-        if (!name || !email || !service || !message) {
-            formStatus.textContent =
-                "Por favor, completa todos los campos.";
-            return;
-        }
+            if (submitBtn) {
 
-        const subject = encodeURIComponent(
-            "Nueva consulta - Corporation Services World"
-        );
+                submitBtn.disabled = true;
 
-        const body = encodeURIComponent(
-            "Nombre: " + name + "\n" +
-            "Correo: " + email + "\n" +
-            "Servicio: " + service + "\n\n" +
-            "Mensaje:\n" + message
-        );
+                submitBtn.innerHTML =
+                    'Enviando... <i class="fas fa-spinner fa-spin"></i>';
 
-        // Cambia este correo por el correo empresarial de CSW
-        const companyEmail = "contacto@tudominio.com";
+            }
 
-        formStatus.textContent =
-            "Preparando tu mensaje en tu aplicación de correo...";
-
-        window.location.href =
-            `mailto:${companyEmail}?subject=${subject}&body=${body}`;
-
-    });
-
-    // EFECTO PARALLAX SUTIL EN HERO
-    const hero = document.querySelector(".hero");
-    const heroBackground = document.querySelector(".hero-background");
-
-    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-
-        hero.addEventListener("mousemove", event => {
-
-            const rect = hero.getBoundingClientRect();
-
-            const x = (event.clientX - rect.left) / rect.width - 0.5;
-            const y = (event.clientY - rect.top) / rect.height - 0.5;
-
-            heroBackground.style.transform =
-                `scale(1.05) translate(${x * -12}px, ${y * -12}px)`;
-
-        });
-
-        hero.addEventListener("mouseleave", () => {
-            heroBackground.style.transform = "";
         });
 
     }
+
+
+    /* =====================================
+       AÑO AUTOMÁTICO DEL COPYRIGHT
+    ===================================== */
+
+    const currentYear = document.getElementById("currentYear");
+
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
+
+
+    /* =====================================
+       EFECTO SUAVE EN TARJETAS
+    ===================================== */
+
+    const cards = document.querySelectorAll(".service-card");
+
+    cards.forEach(card => {
+
+        card.addEventListener("mouseenter", () => {
+            card.style.zIndex = "2";
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.zIndex = "1";
+        });
+
+    });
+
+
+    console.log(
+        "Corporation Services World | Página web inicializada correctamente."
+    );
 
 });
